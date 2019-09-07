@@ -1,0 +1,16 @@
+react login
+react redux
+Major Source:https://github.com/facebook/react
+
+https://reactjs.org/community/examples.html
+https://we-are.bookmyshow.com/get-started-with-your-first-react-js-app-part1-34eee7b8559b?gi=2da887a9f3ec
+https://www.taniarascia.com/getting-started-with-react/
+
+
+Note:
+-In practice, most React apps only call ReactDOM.render() once.
+-Always start component names with a capital letter.React treats components starting with lowercase letters as DOM tags.<Welcome /> represents a component and requires Welcome to be in scope.
+-you might start bottom-up with a small component like Button and gradually work your way to the top of the view hierarchy.
+- A good rule of thumb is that if a part of your UI is used several times (Button, Panel, Avatar), or is complex enough on its own (App, FeedStory, Comment), it is a good candidate to be a reusable component.
+-Props are Read-Only: All React components must act like pure functions with respect to their props.
+-
