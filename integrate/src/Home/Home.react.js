@@ -1,6 +1,8 @@
 import React from 'react';
 import DisplayCamp from '../DisplayCamp/DisplayCamp.react';
 import CheckAvailability from '../CheckAvailability/CheckAvailability.react'
+import PatientRegister from '../PatientRegister/PatientRegister.react';
+import DonorRegister from '../DonorRegister/DonorRegister.react';
 
 export default class Home extends React.Component {
 
@@ -24,7 +26,8 @@ export default class Home extends React.Component {
                 <br></br>
                 <h1>Blood Donation Camps</h1>
                 <DisplayCamp/>
-               
+                {/* <PatientRegister></PatientRegister> */}
+               {/* <DonorRegister></DonorRegister> */}
                  
                  
                 

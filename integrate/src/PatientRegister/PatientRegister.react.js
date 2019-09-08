@@ -1,26 +1,23 @@
 import React from 'react';
 
 import './PatientRegister.css';
-let url="http://localhost:3100/patientList";
+let url="http://localhost:1012/addPatient";
 class PatientRegister extends React.Component {
     constructor(props) {
         super(props);
         this.state={
             newpatientList:{
-                "patientId": 0,
-                "patientName": "",
+                "patient_name": "",
                 "dob": "",
-                "bloodGroup": "",
-                "phoneNumber": 0,
+                "blood_group": "O+",
+                "phone_number": 0,
                 "email": "",
-                " effectiveDate": "",
-                "address": {
-                  "line": "",
-                  "city": "",
-                  "state": "",
-                  "country": "",
-                  "pincode":0
-                }
+                "effective_date": "",
+                "line": "",
+                "city": "",
+                "state": "",
+                "country": "",
+                "pincode":0
             }
         }
     }
@@ -33,62 +30,62 @@ class PatientRegister extends React.Component {
         
         let name = event.target.name;
         let value = event.target.value;
-
-         
-          this.setState(prevState =>( {newpatientList:{...prevState.newpatientList,[name]:value}}));
+        this.setState(prevState =>( {newpatientList:{...prevState.newpatientList,[name]:value}}));
       }
 
       handleSubmit =(event) =>
       {
           event.preventDefault();
-          console.log(this.state.newpatientList.dob);
+          console.log(this.state.newpatientList);
           fetch(url,{"method":"POST",
           "body":JSON.stringify(this.state.newpatientList),
            "headers":{
                "Content-Type":"application/json"
            }
-}).then(resp=>{ console.log("Response");console.log(resp.status)});
+}).then(resp=>{ console.log(resp);console.log(resp.status)});
       }
 
     render() {
         return (
             <div >         
             <form onSubmit={this.handleSubmit}>  
-                    <label htmlFor="">Patient Id</label>
-                    <input type="number" name='patientId'     onChange={this.handleChange} required/><br/>
                     <label htmlFor="">Patient Name</label>
-                    <input type="text" name="patientName"   onChange={this.handleChange} required/><br/>
-                    <label htmlFor="">DOB</label>
+                    <input type="text" name="patient_name" pattern="[A-Za-z\s]*" title="Only characters are allowed"  onChange={this.handleChange} required/><br/>
+                   
+                   <label htmlFor="">DOB</label>
                     <input type="date" name="dob"onChange={this.handleChange} required/><br/>
-                    <label htmlFor="">Blood Group</label>
-                    <select name="blood_group">
+                   
+                    <label htmlFor=""> Blood Group</label>
+                    <select name="blood_group" onChange={this.handleChange}>
                         <option value="O+">O+</option>
                         <option value="O-">O-</option>
                         <option value="B+">B+</option>
                         <option value="B-">B-</option>
                     </select><br/>
+
                     <label htmlFor="">Phone Number</label>
-                    <input type="number" name='phoneNumber'  onChange={this.handleChange} required/><br/>
-                    <label htmlFor="" name="address" >Address</label><br/>
+                    <input type="number" name='phone_number'  onChange={this.handleChange} required/><br/>
+                    
                     <label htmlFor="">Line</label>
                     <input type="text" name='line'  onChange={this.handleChange} required /><br/>
+                    
                     <label htmlFor="">State</label>
-                    <input type="text" name='state'  onChange={this.handleChange} required/><br/>
+                    <input type="text" name='state' pattern="[A-Za-z\s]*" title="Only characters are allowed" onChange={this.handleChange} required/><br/>
+                    
                     <label htmlFor="">City</label>
-                    <input type="text" name='city'  onChange={this.handleChange} required/><br/>
+                    <input type="text" name='city' pattern="[A-Za-z\s]*" title="Only characters are allowed"  onChange={this.handleChange} required/><br/>
+                    
                     <label htmlFor="">Country</label>
-                    <input type="text" name='country'  onChange={this.handleChange} required/><br/>
+                    <input type="text" name='country' pattern="[A-Za-z\s]*" title="Only characters are allowed"  onChange={this.handleChange} required/><br/>
+                    
                     <label htmlFor="">Pin Code</label>
                     <input type="number" name='pincode'  onChange={this.handleChange} required/><br/>
-                    {/* <label htmlFor="">Donor Status</label><br></br> */}
-                    {/* <input id="donor_status" name="donor_availablity" checked type="radio" onChange={this.handleChange} required/><br/> */}
-                    {/* <label htmlFor="">Donor Status</label>  Available &nbsp; */}
-                    {/* <input id="donor_status" name="donor_availablity"  type="radio" defaultChecked/>Available<br/>
-                    <input id="donor_status_1" name="donor_availablity"  type="radio"/> Not Available<br/><br/> */}
+                 
                     <label htmlFor="">Email</label>
                     <input type="email" name='email'  onChange={this.handleChange} required /><br/>
+                    
                     <label htmlFor="">Eff Date</label>
-                    <input type="date" name="effectiveDate" onChange={this.handleChange} required/><br/>
+                    <input type="date" name="effective_date" onChange={this.handleChange} required/><br/>
                    
                     <input type="submit" value="POST"/>
             </form>
@@ -98,3 +95,5 @@ class PatientRegister extends React.Component {
 }
 
 export default PatientRegister;
+
+
