@@ -1,17 +1,16 @@
 import React from 'react'
 import axios from 'axios'
-
+// import DisplayAllBl
+import DisplayAllDonationCamps from '../DisplayAllDonationCamps/DisplayAllDonationCamps.react'
 
 export default class DisplayCamp extends React.Component {
 
     constructor() {
         super()
-        this.state=
-        {
-            bloodDonors : [],
-            "click" : false,
-            "btntxt" : "Get Camp"
-         
+        this.state={
+            donationCamps: [],
+            click : false,
+            btntxt : "Get Camp"
         }
     }
 
@@ -19,10 +18,12 @@ export default class DisplayCamp extends React.Component {
 
     componentDidMount(){
 
-        axios.get("http://localhost:3000/donorCamp")
+        axios.get("http://localhost:1014/getAll",{
+      
+        })
         .then(res => {
-         console.log(res);          let bloodDonors= res.data
-         this.setState({ bloodDonors });
+         console.log(res);          let donationCamps= res.data
+         this.setState({ donationCamps });
 })
     }
     
@@ -37,8 +38,8 @@ export default class DisplayCamp extends React.Component {
         
 //         axios.get("http://localhost:3000/bloodCamp")
 //         .then(res => {
-//             console.log(res);          let bloodDonors= res.data;
-//           this.setState({ bloodDonors });
+//             console.log(res);          let donationCamps= res.data;
+//           this.setState({ donationCamps });
 //         })
 //     }
 
@@ -65,7 +66,7 @@ export default class DisplayCamp extends React.Component {
 //            <button type="submit">{this.state.btntxt}</button>
 //            </form>
            
-//            { this.state.bloodDonors.map(bloodDonors => <h3>{bloodDonors.details}</h3>)}
+//            { this.state.donationCamps.map(donationCamps => <h3>{donationCamps.details}</h3>)}
 //            </div>
 //         )
 //         }
@@ -79,7 +80,7 @@ export default class DisplayCamp extends React.Component {
 //            <button type="submit">{this.state.btntxt}</button>
 //            </form>
            
-//            { this.state.bloodDonors.map(bloodDonors => <h3>{bloodDonors.details}</h3>)}
+//            { this.state.donationCamps.map(donationCamps => <h3>{donationCamps.details}</h3>)}
 //            </div>
 //         )
 //     }
@@ -90,7 +91,10 @@ render(){
 
 return(
     <div>
-          { this.state.bloodDonors.map(bloodDonors => <h6>{bloodDonors.text}</h6>)}
+        <DisplayAllDonationCamps donationCamps= {this.state.donationCamps}></DisplayAllDonationCamps>
+            {/* <DisplayAllDonationCamps ></DisplayAllDonationCamps> */}
+          {/* { this.state.donationCamps.map(donationCamps => <h6>{donationCamps.text}</h6>)} */}
+    {/* {this.state.donationCamps} */}
     </div>
 )
 }

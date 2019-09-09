@@ -7,17 +7,19 @@ const LoginNav = () => {
 
     return (
         <div className="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         Login/Signup
-        </button>
-         <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <Link className="dropdown-item" to='/adminLogin'>Admin</Link>
-        <Link className="dropdown-item" to='/patientLogin'>Patient</Link>
-        <Link className="dropdown-item" to='/donorLogin'>Donor</Link>
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Login/Signup
+            </button>
+            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <Link className="dropdown-item" to='/adminLogin'>Admin</Link>
+                <Link className="dropdown-item" to='/patientLogin'>Patient</Link>
+                <Link className="dropdown-item" to='/donorLogin'>Donor</Link>
         {/* <a className="dropdown-item" href="/login">Admin</a>
         <a className="dropdown-item" href="/login">Patient</a>
         <a className="dropdown-item" href="/login">Donor</a> */}
-        </div>
+            </div>
+                <Link to='/donorRegistration' className="btn btn-secondary "> Register Donor</Link>
+                <Link to='/patientRegistration' className="btn btn-secondary "> Register Patient</Link>
         </div>  
         
     );
