@@ -1,6 +1,7 @@
 import React from 'react';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './PatientRegister.css';
+import 'bootstrap/dist/js/bootstrap'
 let url="http://localhost:3100/patientList";
 class PatientRegister extends React.Component {
     constructor(props) {
@@ -52,7 +53,10 @@ class PatientRegister extends React.Component {
 
     render() {
         return (
-            <div >         
+                <div>    
+                 <br></br>
+                <br></br>
+                <br></br>
             <form onSubmit={this.handleSubmit}>  
                     <label htmlFor="">Patient Id</label>
                     <input type="number" name='patientId'     onChange={this.handleChange} required/><br/>
@@ -93,6 +97,7 @@ class PatientRegister extends React.Component {
                     <input type="submit" value="POST"/>
             </form>
             </div>
+    
         );
     }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap'
 import './DonorRegister.css';
 let url="http://localhost:3002/donorList";
 class DonorRegister extends React.Component {
@@ -53,7 +54,11 @@ class DonorRegister extends React.Component {
     render() {
         
         return (
-           <div>   
+               
+                <div className =" donor-reg fixed-center">  
+                <br></br>
+                <br></br>
+                <br></br>
             <form onSubmit={this.handleSubmit}>  
               
                     <label htmlFor="">Donor Id</label>
@@ -106,6 +111,7 @@ class DonorRegister extends React.Component {
                     <input type="submit" value="POST"/>
             </form>
             </div>
+        
         );
     }
 }

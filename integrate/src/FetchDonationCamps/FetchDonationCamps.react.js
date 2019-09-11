@@ -17,7 +17,7 @@ class FetchDonationCamps extends React.Component {
     componentDidMount(){
         console.log("Fetch Donation Camps Component Mounted");
         // specify url of the json data
-        let url="";
+        let url="http://localhost:3000/bloodCamp";
         console.log(url+" loaded: "+ this.state.loaded);
         // fetch the json from the url
         fetch(url).then(resp=>resp.json()).then(

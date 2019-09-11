@@ -1,8 +1,9 @@
 import React from 'react';
 
 import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
-
 import './Login.css';
+import CheckAvailability from '../CheckAvailability/CheckAvailability.react';
+import DisplayCamp from '../DisplayCamp/DisplayCamp.react';
 
 
 
@@ -132,21 +133,34 @@ class Login extends React.Component {
               if(this.props.name==="Admin Login")   
               {
                 return(
-                  <div>s
+                  <div>
+                    <br></br>
+                    <br></br>
+                    <br></br>
                 <h1>Hello Admin</h1>
+              
+                
                 </div>);
               }
               else if(this.props.name==="Patient Login")
               {
                 return(
                   <div>
+                    <br></br>
+                    <br></br>
+                    <br></br>
                 <h1>Hello Patient</h1>
+                <CheckAvailability></CheckAvailability>
                 </div>);
               }
               else{
                 return(
                   <div>
+                    <br></br>
+                    <br></br>
+                    <br></br>
                 <h1>Hello Donor</h1>
+                <DisplayCamp></DisplayCamp>
                 </div>);
               }
       }

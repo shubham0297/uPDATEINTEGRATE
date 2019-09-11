@@ -8,8 +8,9 @@ const LoginNav = () => {
     return (
         <div className="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         Login/Signup
+         Login
         </button>
+        
          <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <Link className="dropdown-item" to='/adminLogin'>Admin</Link>
         <Link className="dropdown-item" to='/patientLogin'>Patient</Link>

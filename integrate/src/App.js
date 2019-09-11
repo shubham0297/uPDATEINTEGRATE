@@ -7,9 +7,8 @@ import Content from './Content/Content.react'
 function App() {
   return (
     <div className="App">
-   
-    <Content></Content>
     <Navbar></Navbar>
+    <Content></Content>
     <Footer></Footer>
     
     </div>

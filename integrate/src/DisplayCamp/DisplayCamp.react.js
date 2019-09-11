@@ -19,7 +19,7 @@ export default class DisplayCamp extends React.Component {
 
     componentDidMount(){
 
-        axios.get("http://localhost:3000/donorCamp")
+        axios.get("http://localhost:3000/bloodCamp")
         .then(res => {
          console.log(res);          let bloodDonors= res.data
          this.setState({ bloodDonors });
@@ -85,13 +85,46 @@ export default class DisplayCamp extends React.Component {
 //     }
 // }
 
-render(){
+    render(){
 
 
-return(
-    <div>
-          { this.state.bloodDonors.map(bloodDonors => <h6>{bloodDonors.text}</h6>)}
-    </div>
+        return(
+            <div class="card example-1 scrollbar-ripe-malinka">
+              <div class="card-body">
+                 <table className='table table-striped '>
+                <thead>
+                        <tr>
+                            <th>title</th>
+                            <th>start</th>
+                            <th>end</th>
+                            <th>venue</th>
+                            
+                            <th>startTime</th>
+                            <th>endTime</th>
+                            
+                          
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {this.state.bloodDonors.map(bloodDonors=>
+                                                <tr ><td>{bloodDonors.title}</td>
+                                                <td>{bloodDonors.start}</td>
+                                                <td>{bloodDonors.end}</td>
+                                                
+                                                <td>{bloodDonors.venue}</td>
+                                                <td>{bloodDonors.startTime}</td>
+                                                <td>{bloodDonors.endTime}</td>
+                                                </tr>                        
+                                )
+                                }
+                               
+                    </tbody>
+                    </table>
+        
+                  {/* { this.state.bloodDonors.map(bloodDonors => <h3>{bloodDonors.details}</h3>)} */}
+            </div>
+            </div>
+
 )
 }
 
